@@ -1,0 +1,42 @@
+EYiiApi
+-------
+Extension to use under development providing you with api documentation.
+
+TODO:
+ 
+###Section "use case"
+- describe tabs and yiiframework.com/doc/api... yiii doc thumbs up.
+- no internet no fun.
+- part of yiibot project and etbar
+
+###Section "install"
+- config
+~~~
+[php]
+<?php
+    return array(
+        'modules'=>array(
+                'myiiapi',
+        ),
+    ......
+    );
+?>
+~~~
+
+###Changelog 
+- Version: next
+    * Create MyActiveRecord that will be extended from 
+      the models under the model folder so they will point 
+      to the database under data.
+    * Work with the css and toggle
+    * create the eyiiapi.js
+    * mv ./views/default/* ./views ( correct render as well )
+    * mv ./css/myiiapi.css ./css/eyiiapi.css
+- Version: 0.2
+    * 1 Generic view
+
+- Version: 0.1
+    * Added database.
+    * Working with diff views.
+
+BUG: method pass only 1 char

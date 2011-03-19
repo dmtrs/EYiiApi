@@ -1,0 +1,54 @@
+/* Classes */
+.myiiapi
+{
+    width: 20em;
+    position: fixed;
+    bottom: 0;
+    float: right;
+    border: solid 2px #DDDDDD;
+    font-family: Arial, sans-serif;
+    /*left: 0;*/
+}
+.myiiapi-item
+{
+    margin: 1em;
+    border: solid 0.5px #C9E0ED;
+}
+.myiiapi-bar
+{
+    height: 1em;
+}
+.myiiapi-header
+{
+/*    border: solid 0.5px #C9E0ED;*/
+    width: 100%;
+    background: none repeat scroll 0 0 #EEEEEE;
+    border-bottom: 1px solid #DDDDDD;
+/*    padding-top: 0.5em;*/
+}
+.myiiapi-content
+{
+    height: 20em;
+    overflow: auto;
+    background: white;
+}
+/* Ids */
+#myiiapi-bar-toggle
+{
+    float: right;
+    padding-right: 1em;
+}
+#myiiapi-search-button
+{
+    width: 30%;
+    float: right;
+}
+#myiiapi-search-text
+{
+    width: 65%;
+}
+#myiiapi-form
+{
+    margin: 0.5em 1em 0.2em;
+}
+
