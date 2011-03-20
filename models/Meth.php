@@ -16,7 +16,7 @@
  * The followings are the available model relations:
  * @property DocClass $clName0
  */
-class Meth extends CActiveRecord
+class Meth extends EYiiApiActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
@@ -70,13 +70,13 @@ class Meth extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'cl_name' => 'Cl Name',
-			'me_name' => 'Me Name',
-			'me_returns' => 'Me Returns',
-			'me_description' => 'Me Description',
-			'me_definedby' => 'Me Definedby',
-			'me_access' => 'Me Access',
-			'me_link' => 'Me Link',
+			'cl_name' => 'Name',
+			'me_name' => 'Name',
+			'me_returns' => 'Returns',
+			'me_description' => 'Description',
+			'me_definedby' => 'Defined by',
+			'me_access' => 'Access',
+			'me_link' => 'Link',
 		);
 	}
 

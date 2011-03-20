@@ -17,13 +17,13 @@ class EYiiApi extends CWidget
 		    'pr_type', 
         	'pr_definedby', 
 	    	'pr_access', 
-		    'pr_link', 
+		    //'pr_link', 
         ),
         'meth'=>array(
             'me_returns',
             'me_definedby',
             'me_access',
-            'me_link',
+            //'me_link',
         ),
     );
     private $searchTypes = array(
@@ -33,7 +33,7 @@ class EYiiApi extends CWidget
     );
     private $css = null;
 
-	public function init()
+    public function init()
 	{   
         Yii::import('application.extensions.EYiiApi.models.*');
         $this->registerScripts();
@@ -50,15 +50,22 @@ class EYiiApi extends CWidget
         $cs = Yii::app()->clientScript;
 
         if($this->css===null) {
-            $cssPath = dirname(__FILE__).DIRECTORY_SEPARATOR.'css'.DIRECTORY_SEPARATOR;
+            $epath = dirname(__FILE__).DIRECTORY_SEPARATOR;
+            $cssPath = $epath.'css'.DIRECTORY_SEPARATOR;
             $cssFiles = array('myiiapi.css');
 
             $this->css = Yii::app()->getAssetManager()->publish($cssPath);
+            $this->css .= DIRECTORY_SEPARATOR;
             foreach($cssFiles as $file)
             {
-                $cs->registerCssFile($this->css.DIRECTORY_SEPARATOR.$file);
+                $cs->registerCssFile($this->css.$file);
             }
         }
+        if(!$cs->isScriptRegistered('jquery')) {
+            $cs->registerCoreScript('jquery');
+        }
+        $jsAssetPath = Yii::app()->getAssetManager()->publish($epath.'eyiiapi.js');
+        $cs->registerScriptFile($jsAssetPath, CClientScript::POS_HEAD);
     }
 	public function failSearch()
 	{

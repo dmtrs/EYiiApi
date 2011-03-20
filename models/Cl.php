@@ -14,7 +14,7 @@
  * @property string $cl_description
  * @property string $cl_link
  */
-class Cl extends CActiveRecord
+class Cl extends EYiiApiActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
@@ -67,14 +67,14 @@ class Cl extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'cl_name' => 'Cl Name',
-			'cl_package' => 'Cl Package',
-			'cl_inheritance' => 'Cl Inheritance',
-			'cl_subclasses' => 'Cl Subclasses',
-			'cl_since' => 'Cl Since',
-			'cl_version' => 'Cl Version',
-			'cl_description' => 'Cl Description',
-			'cl_link' => 'Cl Link',
+			'cl_name' => 'Name',
+			'cl_package' => 'Package',
+			'cl_inheritance' => 'Inheritance',
+			'cl_subclasses' => 'Subclasses',
+			'cl_since' => 'Since',
+			'cl_version' => 'Version',
+			'cl_description' => 'Description',
+			'cl_link' => 'Link',
 		);
 	}
 

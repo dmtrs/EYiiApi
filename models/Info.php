@@ -9,7 +9,7 @@
  * @property string $attribute
  * @property string $value
  */
-class Info extends CActiveRecord
+class Info extends EYiiApiActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.

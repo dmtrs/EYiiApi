@@ -7,8 +7,13 @@ foreach($results as $model)
         $header = $model->cl_name."::";
         if($prefix == "pr")
             $header .="$";
-    }         
-    echo "<span id='myiiapi-item-header' >".$header.$model->{$prefix."_name"}."</span>";
+    }   
+    echo "<span class='myiiapi-item-header' >";
+    echo CHtml::link($header.$model->{$prefix."_name"}, 
+        $model->{$prefix.'_link'},
+        array('target'=>'_blank')
+    );
+    echo "</span>";
     $this->widget('zii.widgets.CDetailView', array(
          'data'=>$model,
               'attributes'=>$attributes,

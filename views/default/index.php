@@ -1,20 +1,7 @@
 <?php
-if(isset($_POST['myiiapi'])) {
+if(isset($_POST['myiiapi'])  && !empty($_POST['search'])) {
     $this->failSearch();
 } else {
-    Yii::app()->clientScript->registerScript("summary", "
-    $(function() {
-        $('.myiiapi-content').toggle();
-        $('#myiiapi-bar-toggle').click(function() {
-            $('.myiiapi-content').toggle();
-
-        });    
-        searchSuccess = function(data) {
-            $('.myiiapi-content').html($(data).find('.myiiapi-item'));
-            $('.myiiapi-content').show();
-        }
-    });", CClientScript::POS_READY);
-
     $this->beginWidget('zii.widgets.jui.CJuiDraggable', array(
         "options"=>array(
             "handle"=>"div.myiiapi-header"
@@ -22,9 +9,10 @@ if(isset($_POST['myiiapi'])) {
     ));
     ?>
 
-    <div class="myiiapi">
+    <div class="myiiapi" style='position: fixed;'>
 	    <div class="myiiapi-header">
         <div class="myiiapi-bar">
+            <span>emyiiapi</span>
             <span id="myiiapi-bar-toggle" style="background: white" >_</span>
         </div>
             <?php 
@@ -48,6 +36,30 @@ if(isset($_POST['myiiapi'])) {
             $this->endWidget(); ?>
     	</div>
         <div class="myiiapi-content">
+            <div class="myiiapi-item">
+                <span class="myiiapi-item-header">
+                    <a href='http://www.yiiframework.com/extension/emyiiapi' >emyiiapi</a>
+                </span>
+                <table class='detail-view' >
+                    <tbody>
+                <?php $information = Info::model()->findAll();
+                $row = "odd";
+                foreach($information as $info)
+                {
+                ?>
+                    		<tr class='<?php echo $row;?>' >
+                    			<th><?php echo $info->attribute; ?></th>
+                    			<td><?php echo $info->value; ?></td>
+                    		</tr>
+                <?php
+                    $row = ($row == "odd") ? "even" : "odd" ;
+                }?>
+                   </tbody>
+                </table>
+                <p>emyiiapi extension is quick reference of yii documentation 
+                and is purpose is to be used in your current development application.                
+                </p>
+            </div>
         </div>
     </div>
     <?php 

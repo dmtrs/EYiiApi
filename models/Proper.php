@@ -16,7 +16,7 @@
  * The followings are the available model relations:
  * @property DocClass $clName0
  */
-class Proper extends CActiveRecord
+class Proper extends EYiiApiActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
@@ -70,13 +70,13 @@ class Proper extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'cl_name' => 'Cl Name',
-			'pr_name' => 'Pr Name',
-			'pr_type' => 'Pr Type',
-			'pr_description' => 'Pr Description',
-			'pr_definedby' => 'Pr Definedby',
-			'pr_access' => 'Pr Access',
-			'pr_link' => 'Pr Link',
+			'cl_name' => 'Name',
+			'pr_name' => 'Name',
+			'pr_type' => 'Type',
+			'pr_description' => 'Description',
+			'pr_definedby' => 'Defined by',
+			'pr_access' => 'Access',
+			'pr_link' => 'Link',
 		);
 	}
 
