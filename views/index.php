@@ -25,7 +25,7 @@ if(isset($_POST['myiiapi'])  && !empty($_POST['search'])) {
             ));
 		    echo CHtml::hiddenField('myiiapi','1');
 		    echo CHtml::ajaxSubmitButton('Search',
-                Yii::app()->createUrl('default/index'),
+                Yii::app()->createUrl(''),
                 array("success"=>"js: function(data) {
                     searchSuccess(data);
                 }",

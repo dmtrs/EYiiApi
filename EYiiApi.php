@@ -32,6 +32,12 @@ class EYiiApi extends CWidget
         'class'         => '#^(?<class>\w[\w\d]*?)$#',
     );
     private $css = null;
+    /** 
+     * If thte eyiiapi div should be a dialog.
+     * 
+     * @var boolean 
+     **/
+    private $dialog = false;
 
     public function init()
 	{   
@@ -43,7 +49,7 @@ class EYiiApi extends CWidget
     public function run()
     {
 
-        $this->render('default/index');
+        $this->render('index');
     }
     private function registerScripts()
     {
